@@ -49,7 +49,7 @@
 	"status": "SUCCESS",
 	"message": "ping success",
 	"data": {
-		"name": "EduStudent Service",
+		"name": "service-name",
 		"version": "1.0"
 	}
 }
@@ -76,7 +76,7 @@
 	"message": "invalid data",
 	"error": [
 		{
-			"message": "Invalid value",
+			"message": "Username is already used",
 			"field": "username"
 		}
 	]
