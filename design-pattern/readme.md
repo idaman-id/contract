@@ -26,7 +26,7 @@ Feel free to use and **[contribute](https://github.com/idaman-id/contract/pulls 
 
 
 ## 2. Other pattern
-**[Contribute here](https://github.com/idaman-id/contract/blob/master/other/readme.md "Pull Request")**
+**[Contribute here](https://github.com/idaman-id/contract/blob/master/template/readme.md "Pull Request")**
 
 ## Author
 - [Raka Suryaardi Widjaja](https://gitlab.com/kokoraka "Raka Suryaardi Widjaja")

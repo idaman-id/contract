@@ -1,53 +1,100 @@
-# REST Contract
+# REST Contract 😇
 
-## Specification
+🤩 Motivations
+---
+1. Write API specification clearly
+2. Standarize REST API response for internal use 
+
+🖖 Index
+---
+```md
+|-- Rest Contract
+|  |-- [Specification](#specification)
+|  |-- [Example](#example)
+|  |-- [Author](#author)
+```
+
+🧾 Specification
+---
 ### Code
 |Type|Value|Description  |
 |--|--|--|
-|string| 200 | Success response with zero exit code |
+|string| 200 | Success response |
 |string| 400 | General error response code |
-|...| ... | ... |
+|string| 422 | Invalid data response code |
 
-
-### Status
-|Type|Value|Description  |
-|--|--|--|
-|string| SUCCESS| Success response with zero exit code |
-|string| ERROR| General error response |
-|string| INVALID_DATA | General invalid data provided by client |
-|string| NOT_FOUND | General not found resources (endpoint, data, etc) |
-|string| FORBIDDEN | General forbidden access to protected resources |
-|string| UNAUTHENTICATE | General unauthenticate access to protected resources |
-|string| REQUEST_TIMEOUT | Network request timeout |
-|string| BAD_GATEWAY | Failed connect to host |
-|...| ... | ... |
+Example:
+```json
+{
+  "code": "200"
+}
+```
 
 ### Message
 |Type|Value|Description  |
 |--|--|--|
-|string| [contextual action] | Single string represented |
-
-### Error
-|Type|Value|Description  |
-|--|--|--|
-|array| [multiple value] | Multiple error |
-|object| [single value] | Single error |
-|...| ... | ... |
+|string| [contextual message] | Single string represented |
+Example:
+```json
+{
+  "message": "Success retrieve resource"
+}
+```
 
 ### Data
 |Type|Value|Description  |
 |--|--|--|
 |object| [single value] | Single resource |
 |array| [multiple value] | Multiple resource |
-|...| ... | ... |
 
-## Example
+Example:
+```json
+/** object **/
+{
+  "data": {
+    "id": "id",
+    "name": "name"
+  }
+}
+
+/** array **/
+{
+  "data": [
+    {
+      "id": "id",
+      "name": "name"
+    }
+  ]
+}
+```
+
+### Error
+#### Validation Error
+|Type|Value|Description  |
+|--|--|--|
+|array| [validation-type] | Multiple invalid data error |
+
+Example:
+```json
+{
+  "validation_errors": [
+    {
+      "field": "name",
+      "message": "Invalid value"
+    }
+  ]
+}
+```
+
+---
+
+📋 Example
+---
 ### Success Response
 ```json
 {
 	"code": "200",
-	"status": "SUCCESS",
-	"message": "ping success",
+	"message": "ok",
 	"data": {
 		"name": "service-name",
 		"version": "1.0"
@@ -60,11 +107,7 @@
 {
 	"code": "400",
 	"status": "ERROR",
-	"message": "error orccured",
-	"error": {
-		"code": "S102",
-		"message": "Specified error case provided by application"
-	}
+	"message": "error orccured"
 }
 ```
 
@@ -74,15 +117,29 @@
 	"code": "422",
 	"status": "INVALID_DATA",
 	"message": "invalid data",
-	"error": [
-		{
-			"message": "Username is already used",
-			"field": "username"
+	"validation_errors": [
+    {
+      "field": "username",
+			"message": "Username is already used"
 		}
 	]
 }
 ```
 
-## Author
-- [Raka Suryaardi Widjaja](https://gitlab.com/kokoraka "Raka Suryaardi Widjaja")
-- You're the next contributor?
+🤩 Contributor
+---
+[![](https://github.com/kokoraka.png?size=50)](https://github.com/kokoraka)
+
+Feel free to [contribute][contribute-url]
+
+💖 Support
+---
+Feel free to contributes and supporting us through: 
+[Patreon][patreon-url]
+
+📜 License
+---
+MIT
+
+[contribute-url]: https://github.com/idaman-id/contract/pulls
+[patreon-url]: https://patreon.com/idaman
