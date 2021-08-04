@@ -3,23 +3,26 @@ Design Pattern 😇
 
 🤩 Motivations
 ---
-1. Standarize team convention of writing code and the goal is to become better developer and deploy high quality software.
+1. Provide real world production code using design pattern
+2. Avoid abusing design pattern with a lot of misleading example on the internet
+3. Standarize team convention of writing code.
+4. Become better developer through deploying high quality software.
+5. Save learning curve to learn design pattern
 
 🧾 Basic Rules
 ---
 1. Always put data type in every method, function, constructor, etc if possible.
 2. Add code comment if neccessary.
 3. Define clear and meaningfull acess modifier if possible.
-4. **[Contribute here](https://github.com/idaman-id/contract/pulls "Pull Request")**
 
 📋 Pattern
 ---
-## 1. Factory Method Pattern
+## 1. Factory Method
 **[View Pattern](https://github.com/idaman-id/contract/blob/master/factory-method/readme.md "View Pattern")**
 **Typescript** [[View code](https://github.com/idaman-id/contract/blob/master/factory-method/example "View Code")]
 
 
-## 2. Other pattern
+## 2. Other 
 **[Contribute here](https://github.com/idaman-id/contract/blob/master/pattern-example/readme.md "Pull Request")**
 
 🚀 Roadmaps
